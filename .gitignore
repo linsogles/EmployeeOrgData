@@ -8,3 +8,5 @@ Program2/nbproject/build-impl.xml
 Program2/nbproject/genfiles.properties
 Program2/nbproject/private/private.properties
 Program2/nbproject/private/private.xml
+/Program2/dist/
+/Program2/build/

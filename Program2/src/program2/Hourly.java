@@ -1,12 +1,31 @@
+/*
+ * Linda Oglesbee & Scott Mitchell
+ * 2/6/2018
+ * Program 2
+ * TODO: description 
+ */
+
 package program2;
 
-/**
- *
- * @author scottmitchell
- * Jan 25, 2018
- */
+import java.math.BigDecimal;
+
 public class Hourly extends Employee {
     
+    private BigDecimal wage;
+    private int hoursPerWeek;
     
+    public Hourly(String name, String address, String idNum, String bossID, BigDecimal hourlyPayRate, int hoursWorked)
+    {
+        super(name, address, idNum, bossID);
+        
+        this.wage = hourlyPayRate;
+        this.hoursPerWeek = hoursWorked;
+    }
+    
+    public BigDecimal getGrossWeeklyPay()
+    {
+        
+        // TODO write method to return gross weekly pay
+    }
     
 }

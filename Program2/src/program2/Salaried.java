@@ -1,10 +1,28 @@
+/*
+ * Linda Oglesbee & Scott Mitchell
+ * 2/6/2018
+ * Program 2
+ * TODO: description 
+ */
 package program2;
 
-/**
- *
- * @author scottmitchell
- * Jan 25, 2018
- */
-public class Salaried extends Employee {
+import java.math.BigDecimal;
 
+public class Salaried extends Employee {
+    
+    private BigDecimal annualSalary;
+    
+    public Salaried(String name, String address, String idNum, String bossID, BigDecimal annualSalary)
+    {
+        super(name, address, idNum, bossID);
+        
+        this.annualSalary = annualSalary;
+    }
+    
+    public BigDecimal getGrossWeeklyPay()
+    {
+        
+        // TODO write method to return gross weekly pay
+    }
+    
 }

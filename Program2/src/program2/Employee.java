@@ -9,10 +9,10 @@ package program2;
 import java.math.BigDecimal;
 
 public abstract class Employee {
-    private String name;
-    private String address;
-    private String idNum;
-    private String bossID;
+    protected String name;
+    protected String address;
+    protected String idNum;
+    protected String bossID;
     
     public Employee(String name, String address, String idNum, String bossID)
     {

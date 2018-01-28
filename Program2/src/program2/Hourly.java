@@ -24,8 +24,11 @@ public class Hourly extends Employee {
     
     public BigDecimal getGrossWeeklyPay()
     {
+        BigDecimal grossWeeklyPay = new BigDecimal(hoursPerWeek);
         
-        // TODO write method to return gross weekly pay
+        grossWeeklyPay.multiply(wage);
+        
+        return grossWeeklyPay;
     }
     
 }

@@ -26,6 +26,16 @@ public class Hourly extends Employee {
     {
         
         // TODO write method to return gross weekly pay
+        //Method to-String
+        public void setWage(double hourlyPayRate){
+           //(𝐻𝑜𝑢𝑟𝑙𝑦 𝑝𝑎𝑦 𝑟𝑎𝑡𝑒) ∗( ℎ𝑜𝑢𝑟𝑠 𝑤𝑜𝑟𝑘𝑒𝑑)  
+        }
+        public double getWage(){
+            //return in from external file
+        }
+        
+        return wage;
+        
     }
     
 }

@@ -21,8 +21,8 @@ public class Salaried extends Employee {
     
     public BigDecimal getGrossWeeklyPay()
     {
-        
         // TODO write method to return gross weekly pay
+      
     }
     
 }

@@ -19,5 +19,7 @@ public class Supervisor extends Salaried {
     {
         
         // TODO write method to return gross weekly pay
+        //double grossWk=new pay;
+        //return grossWk;
     }
 }

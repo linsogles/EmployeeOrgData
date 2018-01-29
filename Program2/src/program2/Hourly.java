@@ -24,7 +24,9 @@ public class Hourly extends Employee {
     
     public BigDecimal getGrossWeeklyPay()
     {
+        BigDecimal grossWeeklyPay = new BigDecimal(hoursPerWeek);
         
+<<<<<<< HEAD
         // TODO write method to return gross weekly pay
         //Method to-String
         public void setWage(double hourlyPayRate){
@@ -36,6 +38,11 @@ public class Hourly extends Employee {
         
         return wage;
         
+=======
+        grossWeeklyPay.multiply(wage);
+        
+        return grossWeeklyPay;
+>>>>>>> edf76e04480c093c5d837482d13f93013f56ee5f
     }
     
 }

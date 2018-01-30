@@ -25,29 +25,14 @@ public class Hourly extends Employee
     public BigDecimal getGrossWeeklyPay()
     {
         BigDecimal grossWeeklyPay = new BigDecimal(hoursPerWeek);
-<<<<<<< HEAD
-        
-//<<<<<<< HEAD
-        // TODO write method to return gross weekly pay
-        //Method to-String
-        public void setWage(double hourlyPayRate){
-           //(𝐻𝑜𝑢𝑟𝑙𝑦 𝑝𝑎𝑦 𝑟𝑎𝑡𝑒) ∗( ℎ𝑜𝑢𝑟𝑠 𝑤𝑜𝑟𝑘𝑒𝑑)  
-           //grossWeeklyPay*hoursPerWeek
-        }
-        public double getWage(){
-            //return in from external file
-        }
-        
-        return wage;
-        
-//=======
-=======
 
->>>>>>> 0eafdca48de7a448677b4f24409d146b1bcc515d
         grossWeeklyPay.multiply(wage);
 
         return grossWeeklyPay;
-//>>>>>>> edf76e04480c093c5d837482d13f93013f56ee5f
     }
 
+    public BigDecimal getWage()
+    {
+        return wage;
+    }
 }

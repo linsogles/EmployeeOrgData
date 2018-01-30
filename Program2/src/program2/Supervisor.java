@@ -9,23 +9,19 @@ package program2;
 
 import java.math.BigDecimal;
 
-public class Supervisor extends Salaried {
-    
+public class Supervisor extends Salaried
+{
     BigDecimal bonus;
-    
-    public Supervisor(String name, String address, String idNum, String bossID, BigDecimal annualSalary,  BigDecimal bonus)
+
+    public Supervisor(String name, String address, String idNum, String bossID, BigDecimal annualSalary, double bonus)
     {
         super(name, address, idNum, bossID, annualSalary);
+        
+        this.bonus = new BigDecimal(bonus);
     }
-    public BigDecimal setGrossWeeklyPay(){
-            //(𝐴𝑛𝑛𝑢𝑎𝑙 𝑆𝑎𝑙𝑎𝑟𝑦) ÷ 52 + (𝑏𝑜𝑛𝑢𝑠) ÷ 52
-        }
-    
+
     public BigDecimal getGrossWeeklyPay()
     {
         
-        // TODO write method to return gross weekly pay
-        //double grossWk=new pay;
-        //return grossWeeklyPay;
     }
 }

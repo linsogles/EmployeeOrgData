@@ -24,28 +24,14 @@ public class Salaried extends Employee
 
     public BigDecimal getGrossWeeklyPay()
     {
-<<<<<<< HEAD
-        
 
-        public void setWage(double hourlyPayRate){
-           //(𝐻𝑜𝑢𝑟𝑙𝑦 𝑝𝑎𝑦 𝑟𝑎𝑡𝑒) ∗( ℎ𝑜𝑢𝑟𝑠 𝑤𝑜𝑟𝑘𝑒𝑑)  
-        }
-        public double getWage(){
-            //return in from external file
-        }
-        
-        return wage;
-        
-//=======
-        grossWeeklyPay.multiply(wage);
-        
-        return grossWeeklyPay;
-      
-=======
         BigDecimal weekly = new BigDecimal(52);
 
         return this.annualSalary.divide(weekly);
->>>>>>> 0eafdca48de7a448677b4f24409d146b1bcc515d
     }
 
+    public BigDecimal getSalary()
+    {
+        return annualSalary;
+    }
 }

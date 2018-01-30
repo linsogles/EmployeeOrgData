@@ -4,27 +4,28 @@
  * Program 2
  * TODO: Hourly employee displays name, ID, and weekly pay
  */
-
 package program2;
 
 import java.math.BigDecimal;
 
-public class Hourly extends Employee {
-    
+public class Hourly extends Employee
+{
+
     private BigDecimal wage;
     private int hoursPerWeek;
-    
+
     public Hourly(String name, String address, String idNum, String bossID, BigDecimal hourlyPayRate, int hoursWorked)
     {
         super(name, address, idNum, bossID);
-        
+
         this.wage = hourlyPayRate;
         this.hoursPerWeek = hoursWorked;
     }
-    
+
     public BigDecimal getGrossWeeklyPay()
     {
         BigDecimal grossWeeklyPay = new BigDecimal(hoursPerWeek);
+<<<<<<< HEAD
         
 //<<<<<<< HEAD
         // TODO write method to return gross weekly pay
@@ -40,10 +41,13 @@ public class Hourly extends Employee {
         return wage;
         
 //=======
+=======
+
+>>>>>>> 0eafdca48de7a448677b4f24409d146b1bcc515d
         grossWeeklyPay.multiply(wage);
-        
+
         return grossWeeklyPay;
 //>>>>>>> edf76e04480c093c5d837482d13f93013f56ee5f
     }
-    
+
 }

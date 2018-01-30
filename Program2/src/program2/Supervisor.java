@@ -11,7 +11,9 @@ import java.math.BigDecimal;
 
 public class Supervisor extends Salaried {
     
-    public Supervisor(String name, String address, String idNum, String bossID, BigDecimal annualSalary)
+    BigDecimal bonus;
+    
+    public Supervisor(String name, String address, String idNum, String bossID, BigDecimal annualSalary,  BigDecimal bonus)
     {
         super(name, address, idNum, bossID, annualSalary);
     }

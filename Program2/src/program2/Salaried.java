@@ -10,19 +10,21 @@ package program2;
 
 import java.math.BigDecimal;
 
-public class Salaried extends Employee {
-    
+public class Salaried extends Employee
+{
+
     private BigDecimal annualSalary;
-    
+
     public Salaried(String name, String address, String idNum, String bossID, BigDecimal annualSalary)
     {
         super(name, address, idNum, bossID);
-        
+
         this.annualSalary = annualSalary;
     }
-    
+
     public BigDecimal getGrossWeeklyPay()
     {
+<<<<<<< HEAD
         
 
         public void setWage(double hourlyPayRate){
@@ -39,6 +41,11 @@ public class Salaried extends Employee {
         
         return grossWeeklyPay;
       
+=======
+        BigDecimal weekly = new BigDecimal(52);
+
+        return this.annualSalary.divide(weekly);
+>>>>>>> 0eafdca48de7a448677b4f24409d146b1bcc515d
     }
-    
+
 }

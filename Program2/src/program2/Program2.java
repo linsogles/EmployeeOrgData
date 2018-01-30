@@ -35,7 +35,7 @@ public class Program2 {
                                           System.out.println ("3) Supervisory Employees");
 					  System.out.println ("    Enter 1, 2, or 3 ");
                                           
-                                          //Below should be in a separate loop possibly
+                                          //input choice 
                                           System.out.println("Name      ID            Gross       Direct Reports");
                                           System.out.println("                      Weekly Pay"         );
                                           System.exit(0);

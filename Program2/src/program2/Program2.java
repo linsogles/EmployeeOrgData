@@ -14,24 +14,24 @@ import java.util.Scanner;
 
 public class Program2
 {
-    
+
     public static void main(String[] args)
     {
         //scanner for keyboard
         Scanner kb = new Scanner(System.in);
-        
+
         //try block to catch file not found expception
         try
         {
             File file = new File("employeeData.txt");
             Scanner inputFile = new Scanner(file);
-        } catch(FileNotFoundException e)
+        } catch (FileNotFoundException e)
         {
             System.out.println("File \"employeeData.txt\" not found! Place file in project directory and restart application.");
             //program can't function without the file so exit
             System.exit(0);
         }
-        
+
         //title header of ui
         System.out.printf("\n\tEmployee Lookup Program");
         //print options for first level of program
@@ -41,10 +41,10 @@ public class Program2
         String topInput = kb.next();
         topInput.toUpperCase();
         //while the user doesn't want to exit
-        while(!topInput.equals("X"))
+        while (!topInput.equals("X"))
         {
             //switch statement to decide what to do.
-            switch(topInput)
+            switch (topInput)
             {
                 case "A":
                     optionA(/* TODO make array from file and put it here */);
@@ -58,7 +58,7 @@ public class Program2
                 default:
                     System.out.println("Invalid input. Please try again.");
             }
-            
+
             //title header of ui
             System.out.printf("\n\tEmployee Lookup Program");
             //print options for first level of program
@@ -71,13 +71,13 @@ public class Program2
             topInput.toUpperCase();
         }
     }
-    
+
     //separating some routines into smaller functions to make main easier to debug
     private static void optionA(ArrayList<Employee> employeeList)
     {
         // TODO write everything for option A
     }
-    
+
     private static void optionB(ArrayList<Employee> employeeList)
     {
         // TODO write everything for option A

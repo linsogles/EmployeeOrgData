@@ -155,7 +155,6 @@ public class Program2
         Scanner kb = new Scanner(System.in);
         System.out.print("\nEnter the ID of the employee: ");
         String idNum = kb.next();
-        Employee foundEmp;
         for (Employee element : employeeList)
         {
             if (element.getIdNum().equals(idNum))

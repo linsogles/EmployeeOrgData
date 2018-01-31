@@ -12,14 +12,16 @@ import java.math.BigDecimal;
 public class Supervisor extends Salaried
 {
     BigDecimal bonus;
-
+    
+    //constructor calls super constructor and fills bonus
     public Supervisor(String empType, String name, String address, String idNum, String bossID, BigDecimal annualSalary, BigDecimal bonus)
     {
         super(empType, name, address, idNum, bossID, annualSalary);
         
         this.bonus = bonus;
     }
-
+    
+    //gets weekly pay specific to a supervisor, salary plus bonus
     public BigDecimal getGrossWeeklyPay()
     {
        BigDecimal weeklyBonus = this.bonus.divide(new BigDecimal(52));
@@ -29,6 +31,7 @@ public class Supervisor extends Salaried
        return weeklySal.add(weeklyBonus);
     }
     
+    //getter for bonus
     public BigDecimal getBonus()
     {
         return this.bonus;

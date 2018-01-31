@@ -135,8 +135,8 @@ public class Program2
             topInput = kb.next();
             //put it to uppercase to simplify things
             topInput = topInput.toUpperCase();
-        }
-    }
+        } //end program loop
+    } //end main
 
     //separating some routines into smaller functions to make main easier to debug
     private static void optionA(ArrayList<Employee> employeeList)
@@ -148,7 +148,8 @@ public class Program2
         System.out.println("Name      ID            Gross       Direct Reports");
         System.out.println("                      Weekly Pay");
     }
-
+    
+    //this method segragates the routine of finding a single employee by ID
     private static void optionB(ArrayList<Employee> employeeList)
     {
         Scanner kb = new Scanner(System.in);

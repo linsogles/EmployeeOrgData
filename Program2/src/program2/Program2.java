@@ -52,7 +52,6 @@ public class Program2
                         String address = separation.next();
                         String idNum = separation.next();
                         String bossID = separation.next();
-                        BigDecimal annualSalary = separation.next()
                         break;
                     }
                         
@@ -80,10 +79,10 @@ public class Program2
             switch (topInput)
             {
                 case "A":
-                    optionA(/* TODO make array from file and put it here */);
+                    optionA(employees); //string for reading in from outside file);
                     break;
                 case "B":
-                    optionB(/* TODO make array from file and put it here */);
+                    optionB(employees); //string for reading in from outside file);
                     break;
                 case "X":
                     System.exit(0);
@@ -108,7 +107,11 @@ public class Program2
     //separating some routines into smaller functions to make main easier to debug
     private static void optionA(ArrayList<Employee> employeeList)
     {
-        // TODO write everything for option A
+        System.out.println ("1) Hourly Employee");
+        System.out.println ("3) Supervisory Employees");
+	System.out.println ("    Enter 1, 2, or 3 ");                      
+        System.out.println("Name      ID            Gross       Direct Reports");
+        System.out.println("                      Weekly Pay"         );
     }
 
     private static void optionB(ArrayList<Employee> employeeList)
@@ -117,6 +120,6 @@ public class Program2
         System.out.print("\nEnter the ID of the employee: ");
         String idNum = kb.next();
         
-        
+        System.out.println("Enter the ID of the employee:");
     }
 }

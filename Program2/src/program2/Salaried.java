@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 public class Salaried extends Employee
 {
 
-    private BigDecimal annualSalary;
+    protected BigDecimal annualSalary;
 
     public Salaried(String name, String address, String idNum, String bossID, BigDecimal annualSalary)
     {

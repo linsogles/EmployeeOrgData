@@ -22,6 +22,10 @@ public class Supervisor extends Salaried
 
     public BigDecimal getGrossWeeklyPay()
     {
-        
+       BigDecimal weeklyBonus = this.bonus.divide(new BigDecimal(52));
+       
+       BigDecimal weeklySal = this.annualSalary.divide(new BigDecimal(52));
+       
+       return weeklySal.add(weeklyBonus);
     }
 }

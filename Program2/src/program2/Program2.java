@@ -10,6 +10,7 @@ package program2;
 import java.io.File;
 
 import java.io.FileNotFoundException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -20,12 +21,43 @@ public class Program2
     {
         //scanner for keyboard
         Scanner kb = new Scanner(System.in);
-
+        ArrayList<Employee> employees = new ArrayList<>();
         //try block to catch file not found expception
         try
         {
             File file = new File("employeeData.txt");
             Scanner inputFile = new Scanner(file);
+            while (inputFile.hasNext())
+            {
+                String nextLine = inputFile.nextLine();
+                Scanner separation = new Scanner(nextLine);
+                separation.useDelimiter(";");
+                String title = separation.next();
+                switch (title)
+                {
+                    case "Hourly" :
+                    {
+                        String name = separation.next();
+                        String address = separation.next();
+                        String idNum = separation.next();
+                        String bossID = separation.next();
+                        BigDecimal hourlyPayRate = new BigDecimal(separation.next());
+                        int hoursWorked = separation.nextByte();
+                        employees.add(new Hourly(name, address, idNum, bossID, hourlyPayRate, hoursWorked));
+                        break;
+                    }
+                    case "Salaried" :
+                    {
+                        String name = separation.next();
+                        String address = separation.next();
+                        String idNum = separation.next();
+                        String bossID = separation.next();
+                        BigDecimal annualSalary = separation.next()
+                        break;
+                    }
+                        
+                }
+            }
         } catch (FileNotFoundException e)
         {
             System.out.println("File \"employeeData.txt\" not found! Place file in project directory and restart application.");
@@ -81,6 +113,10 @@ public class Program2
 
     private static void optionB(ArrayList<Employee> employeeList)
     {
-        // TODO write everything for option A
+        Scanner kb = new Scanner(System.in);
+        System.out.print("\nEnter the ID of the employee: ");
+        String idNum = kb.next();
+        
+        
     }
 }

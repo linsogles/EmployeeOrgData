@@ -48,10 +48,10 @@ public class Program2
             switch (topInput)
             {
                 case "A":
-                    optionA(/* TODO make array from file and put it here */);
+                    optionA(ArrayList<Employee> A = new ArrayList<String>()); //string for reading in from outside file);
                     break;
                 case "B":
-                    optionB(/* TODO make array from file and put it here */);
+                    optionB(ArrayList<Employee> B = new ArrayList<String>()); //string for reading in from outside file);
                     break;
                 case "X":
                     System.exit(0);
@@ -76,11 +76,16 @@ public class Program2
     //separating some routines into smaller functions to make main easier to debug
     private static void optionA(ArrayList<Employee> employeeList)
     {
-        // TODO write everything for option A
+        System.out.println ("1) Hourly Employee");
+        System.out.println ("2) Salaried Employee");
+        System.out.println ("3) Supervisory Employees");
+	System.out.println ("    Enter 1, 2, or 3 ");                      
+        System.out.println("Name      ID            Gross       Direct Reports");
+        System.out.println("                      Weekly Pay"         );
     }
 
     private static void optionB(ArrayList<Employee> employeeList)
     {
-        // TODO write everything for option A
+        System.out.println("Enter the ID of the employee:");
     }
 }

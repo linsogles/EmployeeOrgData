@@ -8,7 +8,6 @@
 package program2;
 
 import java.io.File;
-
 import java.io.FileNotFoundException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -155,12 +154,26 @@ public class Program2
         Scanner kb = new Scanner(System.in);
         System.out.print("\nEnter the ID of the employee: ");
         String idNum = kb.next();
+        if (idNum.length() != 6)
+        {
+            System.out.print("\nInvalid ID number: ID numbers must be 6 digits.");
+            System.out.print("\n\nEnter the ID of the employee: ");
+            idNum = kb.next();
+        }
+        //boolean variable to tell if anything was found
+        boolean found = false;
         for (Employee element : employeeList)
         {
             if (element.getIdNum().equals(idNum))
             {
                 System.out.printf("\t%s\t%s\t%s Employee\n", element.getName(), element.getIdNum(), element.getEmpType());
+                found = true;
             }
+        }
+        //if the id wasn't found
+        if (!found)
+        {
+            System.out.println("Sorry, no employee with ID " + idNum + " was found");
         }
     }
 }

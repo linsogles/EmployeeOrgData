@@ -35,26 +35,38 @@ public class Program2
                 String title = separation.next();
                 switch (title)
                 {
-                    case "Hourly" :
+                    case "Hourly":
                     {
                         String name = separation.next();
                         String address = separation.next();
                         String idNum = separation.next();
                         String bossID = separation.next();
-                        BigDecimal hourlyPayRate = new BigDecimal(separation.next());
-                        int hoursWorked = separation.nextByte();
+                        BigDecimal hourlyPayRate = new BigDecimal(separation.nextDouble());
+                        int hoursWorked = separation.nextInt();
                         employees.add(new Hourly(name, address, idNum, bossID, hourlyPayRate, hoursWorked));
                         break;
                     }
-                    case "Salaried" :
+                    case "Salaried":
                     {
                         String name = separation.next();
                         String address = separation.next();
                         String idNum = separation.next();
                         String bossID = separation.next();
+                        BigDecimal annualSalary = new BigDecimal(separation.next());
+                        employees.add(new Salaried(name, address, idNum, bossID, annualSalary));
                         break;
                     }
-                        
+                    case "Supervisor":
+                    {
+                        String name = separation.next();
+                        String address = separation.next();
+                        String idNum = separation.next();
+                        String bossID = separation.next();
+                        BigDecimal annualSalary = new BigDecimal(separation.next());
+                        BigDecimal bonus = new BigDecimal(separation.next());
+                        employees.add(new Supervisor(name, address, idNum, bossID, annualSalary, bonus));
+                        break;
+                    }
                 }
             }
         } catch (FileNotFoundException e)
@@ -107,11 +119,12 @@ public class Program2
     //separating some routines into smaller functions to make main easier to debug
     private static void optionA(ArrayList<Employee> employeeList)
     {
-        System.out.println ("1) Hourly Employee");
-        System.out.println ("3) Supervisory Employees");
-	System.out.println ("    Enter 1, 2, or 3 ");                      
+        System.out.println("1) Hourly Employee");
+        System.out.println("2) Salaried Employee");
+        System.out.println("3) Supervisory Employees");
+        System.out.println("    Enter 1, 2, or 3 ");
         System.out.println("Name      ID            Gross       Direct Reports");
-        System.out.println("                      Weekly Pay"         );
+        System.out.println("                      Weekly Pay");
     }
 
     private static void optionB(ArrayList<Employee> employeeList)
@@ -119,7 +132,7 @@ public class Program2
         Scanner kb = new Scanner(System.in);
         System.out.print("\nEnter the ID of the employee: ");
         String idNum = kb.next();
-        
+
         System.out.println("Enter the ID of the employee:");
     }
 }

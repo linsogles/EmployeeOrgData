@@ -2,8 +2,8 @@
  * Linda Oglesbee & Scott Mitchell
  * 2/6/2018
  * Program 2
- * TODO:  Salaried employees paid an agreed-upon amount of money on 
- * an annual basis.  In addition to the information in 1), a salaried
+ * Salaried employees paid an agreed-upon amount of money on 
+ * an annual basis.  In addition to the information in employee, a salaried
  * employee has an annual salary 
  */
 package program2;

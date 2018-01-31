@@ -2,7 +2,7 @@
  * Linda Oglesbee & Scott Mitchell
  * 2/6/2018
  * Program 2
- * TODO:  Supervisor is paid an agreed-upon amount of money on 
+ * Supervisor is paid an agreed-upon amount of money on 
  * an annual basis. Name, ID, Gross Weekley Pay & Direct reports
  */
 package program2;

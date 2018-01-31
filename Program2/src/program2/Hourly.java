@@ -14,9 +14,9 @@ public class Hourly extends Employee
     private BigDecimal wage;
     private int hoursPerWeek;
 
-    public Hourly(String name, String address, String idNum, String bossID, BigDecimal hourlyPayRate, int hoursWorked)
+    public Hourly(String empType, String name, String address, String idNum, String bossID, BigDecimal hourlyPayRate, int hoursWorked)
     {
-        super(name, address, idNum, bossID);
+        super(empType, name, address, idNum, bossID);
 
         this.wage = hourlyPayRate;
         this.hoursPerWeek = hoursWorked;
@@ -33,6 +33,11 @@ public class Hourly extends Employee
 
     public BigDecimal getWage()
     {
-        return wage;
+        return this.wage;
+    }
+    
+    public int getHours()
+    {
+        return this.hoursPerWeek;
     }
 }

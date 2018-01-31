@@ -15,9 +15,9 @@ public class Salaried extends Employee
 
     protected BigDecimal annualSalary;
 
-    public Salaried(String name, String address, String idNum, String bossID, BigDecimal annualSalary)
+    public Salaried(String empType, String name, String address, String idNum, String bossID, BigDecimal annualSalary)
     {
-        super(name, address, idNum, bossID);
+        super(empType, name, address, idNum, bossID);
 
         this.annualSalary = annualSalary;
     }

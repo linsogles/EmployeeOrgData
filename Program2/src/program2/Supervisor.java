@@ -13,9 +13,9 @@ public class Supervisor extends Salaried
 {
     BigDecimal bonus;
 
-    public Supervisor(String name, String address, String idNum, String bossID, BigDecimal annualSalary, BigDecimal bonus)
+    public Supervisor(String empType, String name, String address, String idNum, String bossID, BigDecimal annualSalary, BigDecimal bonus)
     {
-        super(name, address, idNum, bossID, annualSalary);
+        super(empType, name, address, idNum, bossID, annualSalary);
         
         this.bonus = bonus;
     }
@@ -27,5 +27,10 @@ public class Supervisor extends Salaried
        BigDecimal weeklySal = this.annualSalary.divide(new BigDecimal(52));
        
        return weeklySal.add(weeklyBonus);
+    }
+    
+    public BigDecimal getBonus()
+    {
+        return this.bonus;
     }
 }

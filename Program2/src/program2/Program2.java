@@ -25,46 +25,63 @@ public class Program2
         //try block to catch file not found expception
         try
         {
+            //intsantiate file
             File file = new File("employeeData.txt");
+            //scanner for file
             Scanner inputFile = new Scanner(file);
+            //loop to get contents of file into employees ArrayList
             while (inputFile.hasNext())
             {
+                //take in next line
                 String nextLine = inputFile.nextLine();
+                //scanner for next line
                 Scanner separation = new Scanner(nextLine);
+                //change delimiter to semicolon
                 separation.useDelimiter(";");
+                //take in title
                 String title = separation.next();
+                //check which title the next employee has
                 switch (title)
                 {
                     case "Hourly":
                     {
+                        //take in each field one at a time and put them in variables
+                        String employeeType = title;
                         String name = separation.next();
                         String address = separation.next();
                         String idNum = separation.next();
                         String bossID = separation.next();
                         BigDecimal hourlyPayRate = new BigDecimal(separation.nextDouble());
                         int hoursWorked = separation.nextInt();
-                        employees.add(new Hourly(name, address, idNum, bossID, hourlyPayRate, hoursWorked));
+                        //add a new employee to employees with the input data
+                        employees.add(new Hourly(employeeType, name, address, idNum, bossID, hourlyPayRate, hoursWorked));
                         break;
                     }
                     case "Salaried":
                     {
+                        //take in each field one at a time and put them in variables
+                        String employeeType = title;
                         String name = separation.next();
                         String address = separation.next();
                         String idNum = separation.next();
                         String bossID = separation.next();
                         BigDecimal annualSalary = new BigDecimal(separation.next());
-                        employees.add(new Salaried(name, address, idNum, bossID, annualSalary));
+                        //add a new employee to employees with the input data
+                        employees.add(new Salaried(employeeType, name, address, idNum, bossID, annualSalary));
                         break;
                     }
                     case "Supervisor":
                     {
+                        //take in each field one at a time and put them in variables
+                        String employeeType = title;
                         String name = separation.next();
                         String address = separation.next();
                         String idNum = separation.next();
                         String bossID = separation.next();
                         BigDecimal annualSalary = new BigDecimal(separation.next());
                         BigDecimal bonus = new BigDecimal(separation.next());
-                        employees.add(new Supervisor(name, address, idNum, bossID, annualSalary, bonus));
+                        //add a new employee to employees with the input data
+                        employees.add(new Supervisor(employeeType, name, address, idNum, bossID, annualSalary, bonus));
                         break;
                     }
                 }
@@ -82,8 +99,9 @@ public class Program2
         System.out.println("\nA) Find all employees with a given title");
         System.out.println("\nB) Find a single empployee");
         System.out.println("\nX) Exit the Program");
+        System.out.print("\tEnter your choice: ");
         String topInput = kb.next();
-        topInput.toUpperCase();
+        topInput = topInput.toUpperCase();
         //while the user doesn't want to exit
         while (!topInput.equals("X"))
         {
@@ -91,15 +109,19 @@ public class Program2
             switch (topInput)
             {
                 case "A":
-                    optionA(employees); //string for reading in from outside file);
+                    //call optionA, separated from main to make debugging easier
+                    optionA(employees);
                     break;
                 case "B":
-                    optionB(employees); //string for reading in from outside file);
+                    //call optionB, separated from main to make debugging easier
+                    optionB(employees);
                     break;
                 case "X":
+                    //exit program
                     System.exit(0);
                     break;
                 default:
+                    //invalid input alert
                     System.out.println("Invalid input. Please try again.");
             }
 
@@ -110,9 +132,10 @@ public class Program2
             System.out.println("\nB) Find a single empployee");
             System.out.println("\nX) Exit the Program");
             //get input from user
+            System.out.print("\tEnter your choice: ");
             topInput = kb.next();
             //put it to uppercase to simplify things
-            topInput.toUpperCase();
+            topInput = topInput.toUpperCase();
         }
     }
 
@@ -132,7 +155,13 @@ public class Program2
         Scanner kb = new Scanner(System.in);
         System.out.print("\nEnter the ID of the employee: ");
         String idNum = kb.next();
-
-        System.out.println("Enter the ID of the employee:");
+        Employee foundEmp;
+        for (Employee element : employeeList)
+        {
+            if (element.getIdNum().equals(idNum))
+            {
+                System.out.printf("\t%s\t%s\t%s Employee\n", element.getName(), element.getIdNum(), element.getEmpType());
+            }
+        }
     }
 }

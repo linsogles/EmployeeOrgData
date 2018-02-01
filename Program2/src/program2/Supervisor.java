@@ -3,7 +3,7 @@
  * 2/6/2018
  * Program 2
  * Supervisor is paid an agreed-upon amount of money on 
- * an annual basis. Name, ID, Gross Weekley Pay & Direct reports
+ * an annual basis plus a bonus.
  */
 package program2;
 
@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 
 public class Supervisor extends Salaried
 {
+    //field for bonus
     BigDecimal bonus;
     
     //constructor calls super constructor and fills bonus
@@ -22,6 +23,7 @@ public class Supervisor extends Salaried
     }
     
     //gets weekly pay specific to a supervisor, salary plus bonus
+    @Override
     public BigDecimal getGrossWeeklyPay()
     {
        BigDecimal weeklyBonus = this.bonus.divide(new BigDecimal(52));

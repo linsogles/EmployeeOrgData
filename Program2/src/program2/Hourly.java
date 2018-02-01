@@ -2,7 +2,7 @@
  * Linda Oglesbee & Scott Mitchell
  * 2/6/2018
  * Program 2
- * TODO: Hourly employee displays name, ID, and weekly pay
+ * Hourly employee displays name, ID, and weekly pay
  */
 package program2;
 
@@ -24,6 +24,7 @@ public class Hourly extends Employee
     }
     
     //calculates weekly pay specific to hourly employee
+    @Override
     public BigDecimal getGrossWeeklyPay()
     {
         BigDecimal grossWeeklyPay = new BigDecimal(hoursPerWeek);

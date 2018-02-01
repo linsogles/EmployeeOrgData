@@ -2,7 +2,7 @@
  * Linda Oglesbee & Scott Mitchell
  * 2/6/2018
  * Program 2 - Employee
- * TODO: Abstract Superclass provides base methods
+ * Abstract Superclass provides base methods
  * of which other employee types extend
  */
 package program2;

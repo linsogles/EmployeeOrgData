@@ -2,7 +2,7 @@
  * Linda Oglesbee & Scott Mitchell
  * 2/6/2018
  * Program 2
- * Salaried employees paid an agreed-upon amount of money on 
+ * Salaried employees are paid an agreed-upon amount of money on 
  * an annual basis.  In addition to the information in employee, a salaried
  * employee has an annual salary 
  */
@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 
 public class Salaried extends Employee
 {
-    
+    //field for annual salary
     protected BigDecimal annualSalary;
     
     //constructor calls super constructor and fills annualSalary
@@ -24,6 +24,7 @@ public class Salaried extends Employee
     }
     
     //gets weekly pay specific to salaried employees
+    @Override
     public BigDecimal getGrossWeeklyPay()
     {
 

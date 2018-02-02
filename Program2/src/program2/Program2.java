@@ -161,27 +161,51 @@ public class Program2
         int optionSelect = kb.nextInt();
 
         //presetting the default format so as to write less stuff in the switch statements' blocks
-        String outFormat = "%20s\t%6s\t%17s\n";
+        String outFormat = "%20s\t%6s\t%17s";
 
         switch (optionSelect)
         {
             case 1:
                 //add line for column headers
-                System.out.printf(outFormat, "Name   ", "ID  ", "Gross Weekly Pay");
+                System.out.printf(outFormat + "\n", "Name   ", "ID  ", "Gross Weekly Pay");
 
                 //search for hourly employees
                 for (Employee employee : employeeList)
                 {
                     if (employee.getEmpType().equals("Hourly"))
                     {
-                        System.out.printf(outFormat, employee.getName(), employee.getIdNum(), employee.getGrossWeeklyPay().toString());
+                        System.out.printf(outFormat + "\n", employee.getName(), employee.getIdNum(), employee.getGrossWeeklyPay().toString());
                     }
                 }
                 break;
             case 2:
-
+                System.out.printf(outFormat + "\n", "Name   ", "ID  ", "Gross Weekly Pay");
+                for (Employee employee : employeeList)
+                {
+                    if (employee.getEmpType().equals("Hourly"))
+                    {
+                        System.out.printf(outFormat + "\n", employee.getName(), employee.getIdNum(), employee.getGrossWeeklyPay().toString());
+                    }
+                }
                 break;
             case 3:
+                System.out.printf(outFormat + "\t%20s\n", "Name   ", "ID  ", "Gross Weekly Pay", "Direct Reports");
+                for (Employee employee : employeeList)
+                {
+                    if (employee.getEmpType().equals("Supervisor"))
+                    {
+                        StringBuilder directReports = new StringBuilder();
+                        for (Employee underling : employeeList)
+                        {
+                            if (underling.getBossId().equals(employee.getIdNum()))
+                            {
+                                directReports.append(underling.getIdNum());
+                                directReports.append(" ");
+                            }
+                        }
+                        System.out.printf(outFormat + "\t%s\n", employee.getName(), employee.getIdNum(), employee.getGrossWeeklyPay().toString(), directReports);
+                    }
+                }
                 break;
             default:
                 System.out.println("Invalid input. Please try again");

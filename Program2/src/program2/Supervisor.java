@@ -27,9 +27,10 @@ public class Supervisor extends Salaried
     @Override
     public BigDecimal getGrossWeeklyPay()
     {
-        BigDecimal weeklyBonus = this.bonus.divide(new BigDecimal(52));
+        BigDecimal weeks = new BigDecimal(52);
+        BigDecimal weeklyBonus = this.bonus.divide(weeks, 2, BigDecimal.ROUND_HALF_DOWN);
 
-        BigDecimal weeklySal = this.annualSalary.divide(new BigDecimal(52));
+        BigDecimal weeklySal = this.annualSalary.divide(weeks, 2, BigDecimal.ROUND_HALF_DOWN);
         //this ensures that two decimal places are always shown
         weeklySal = weeklySal.setScale(2);
 

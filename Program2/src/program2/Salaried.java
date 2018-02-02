@@ -12,9 +12,10 @@ import java.math.BigDecimal;
 
 public class Salaried extends Employee
 {
+
     //field for annual salary
     protected BigDecimal annualSalary;
-    
+
     //constructor calls super constructor and fills annualSalary
     public Salaried(String empType, String name, String address, String idNum, String bossID, BigDecimal annualSalary)
     {
@@ -22,13 +23,15 @@ public class Salaried extends Employee
 
         this.annualSalary = annualSalary;
     }
-    
+
     //gets weekly pay specific to salaried employees
     @Override
     public BigDecimal getGrossWeeklyPay()
     {
-
+        //convert number of weeks in year to bigdecimal so we can divide
         BigDecimal weekly = new BigDecimal(52);
+        //this ensures that two decimal places are always shown
+        weekly = weekly.setScale(2);
 
         return this.annualSalary.divide(weekly);
     }

@@ -27,9 +27,13 @@ public class Hourly extends Employee
     @Override
     public BigDecimal getGrossWeeklyPay()
     {
+        //convert hours to a bigdecimal so we can multiply
         BigDecimal grossWeeklyPay = new BigDecimal(hoursPerWeek);
-
-        grossWeeklyPay.multiply(wage);
+        
+        //multiply hours by wage
+        grossWeeklyPay = grossWeeklyPay.multiply(wage);
+        //this ensures that two decimal places are always shown
+        grossWeeklyPay = grossWeeklyPay.setScale(2);
 
         return grossWeeklyPay;
     }

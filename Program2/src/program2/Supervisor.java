@@ -2,7 +2,7 @@
  * Linda Oglesbee & Scott Mitchell
  * 2/6/2018
  * Program 2
- * TODO:  Supervisor is paid an agreed-upon amount of money on 
+ * Supervisor is paid an agreed-upon amount of money on 
  * an annual basis. Name, ID, Gross Weekley Pay & Direct reports
  */
 package program2;
@@ -12,14 +12,16 @@ import java.math.BigDecimal;
 public class Supervisor extends Salaried
 {
     BigDecimal bonus;
-
-    public Supervisor(String name, String address, String idNum, String bossID, BigDecimal annualSalary, double bonus)
+    
+    //constructor calls super constructor and fills bonus
+    public Supervisor(String empType, String name, String address, String idNum, String bossID, BigDecimal annualSalary, BigDecimal bonus)
     {
-        super(name, address, idNum, bossID, annualSalary);
+        super(empType, name, address, idNum, bossID, annualSalary);
         
-        this.bonus = new BigDecimal(bonus);
+        this.bonus = bonus;
     }
-
+    
+    //gets weekly pay specific to a supervisor, salary plus bonus
     public BigDecimal getGrossWeeklyPay()
     {
        BigDecimal weeklyBonus = this.bonus.divide(new BigDecimal(52));
@@ -27,5 +29,11 @@ public class Supervisor extends Salaried
        BigDecimal weeklySal = this.annualSalary.divide(new BigDecimal(52));
        
        return weeklySal.add(weeklyBonus);
+    }
+    
+    //getter for bonus
+    public BigDecimal getBonus()
+    {
+        return this.bonus;
     }
 }

@@ -10,18 +10,20 @@ import java.math.BigDecimal;
 
 public class Hourly extends Employee
 {
-
+    //hourly employees have a wage and a count of hours worked in a week
     private BigDecimal wage;
     private int hoursPerWeek;
-
-    public Hourly(String name, String address, String idNum, String bossID, BigDecimal hourlyPayRate, int hoursWorked)
+    
+    //constructor calls super constructor and fills subclasses fields
+    public Hourly(String empType, String name, String address, String idNum, String bossID, BigDecimal hourlyPayRate, int hoursWorked)
     {
-        super(name, address, idNum, bossID);
+        super(empType, name, address, idNum, bossID);
 
         this.wage = hourlyPayRate;
         this.hoursPerWeek = hoursWorked;
     }
-
+    
+    //calculates weekly pay specific to hourly employee
     public BigDecimal getGrossWeeklyPay()
     {
         BigDecimal grossWeeklyPay = new BigDecimal(hoursPerWeek);
@@ -31,8 +33,15 @@ public class Hourly extends Employee
         return grossWeeklyPay;
     }
 
+    //getter for wage
     public BigDecimal getWage()
     {
-        return wage;
+        return this.wage;
+    }
+    
+    //getter for hours
+    public int getHours()
+    {
+        return this.hoursPerWeek;
     }
 }

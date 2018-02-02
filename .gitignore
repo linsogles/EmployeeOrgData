@@ -11,4 +11,9 @@ Program2/nbproject/private/private.xml
 /Program2/dist/
 /Program2/build/
 Program2/nbproject/private/private.xml
+<<<<<<< HEAD
 *.xml
+=======
+*.xml
+.DS_Store
+>>>>>>> c094f6de896abe1403492407a6f38b97355d1d0a

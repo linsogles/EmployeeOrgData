@@ -7,3 +7,4 @@ Program2/nbproject/build-impl.xml
 *.properties
 *.properties
 *.xml
+*.class
